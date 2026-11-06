@@ -103,6 +103,7 @@ graph TD
 * [[2026-11-05 - Criacao do Super Vault Unificado]]
 * [[2026-11-05 - Sincronizacao Frontend com Game Loop e Ranks]]
 * [[2026-11-05 - Remocao de Contas Demo e Hardening de Producao]]
+* [[2026-11-05 - Protocolo Estrito de Memoria e Vault-First]]
 
 ---
 
