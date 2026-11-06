@@ -7,8 +7,8 @@ tags:
   - tw/plugins
   - tw/design-system
 status: ativo
-versao: "1.0.0"
-ultima_atualizacao: "2026-11-05"
+versao: "1.1.0"
+ultima_atualizacao: "2026-11-06"
 ---
 
 📍 [[MOC_Geral|Início]] ➔ [[MOC_Interacoes|Interações]] ➔ **gui_tw_plugins**
@@ -16,13 +16,13 @@ ultima_atualizacao: "2026-11-05"
 # 🧩 Interfaces: Menus dos Plugins Proprietários (`tw-*`)
 
 > [!abstract] Integração Nativa da Suíte TW
-> Todos os submódulos da rede `tw-*` receberam arquivos de configuração em YAML na pasta `plugins/tw-*/menus/`, alinhando-se estritamente ao [[gui_design_system|Design System]] e à [[gui_arquitetura_navegacao|Arquitetura de Navegação]].
+> Todos os submódulos da rede `tw-*` estão alinhados estritamente ao [[gui_design_system|Design System]] e à [[gui_arquitetura_navegacao|Arquitetura de Navegação]]. O módulo de mineração (`tw-minas`) foi integralmente migrado em Java para interfaces de 54 e 27 slots com molduras em `BLACK_STAINED_GLASS_PANE`, botão de retorno e descrições em 3 seções.
 
 ---
 
 ## 📂 Visão Geral dos Menus Padronizados
 
-| Módulo | Arquivo de Configuração | Tamanho | Título Canônico | Botão Voltar | Botão Fechar |
+| Módulo | Implementação / Arquivo | Tamanho | Título Canônico | Botão Voltar | Botão Fechar |
 |---|---|:---:|---|:---:|:---:|
 | [[04-RANKS-MODULE\|tw-ranks]] | `plugins/tw-ranks/menus/ranks.yml` | 54 Slots | `&8➔ &#7FB4F4&lTRILHA DE RANKS` | Slot 45 | Slot 49 |
 | [[06-TERRENOS-MODULE\|tw-terrenos]] | `plugins/tw-terrenos/menus/terrenos.yml` | 27 Slots | `&8➔ &#7FB4F4&lAGÊNCIA DE TERRENOS` | Slot 18 | Slot 22 |
@@ -30,7 +30,11 @@ ultima_atualizacao: "2026-11-05"
 | [[08-SPAWNERS-MODULE\|tw-spawners]] | `plugins/tw-spawners/menus/spawners.yml` | 54 Slots | `&8➔ &#7FB4F4&lMERCADO DE SPAWNERS` | Slot 45 | Slot 49 |
 | [[09-FARMS-MODULE\|tw-farms]] | `plugins/tw-farms/menus/farms.yml` | 54 Slots | `&8➔ &#7FB4F4&lCENTRAL AGRÍCOLA` | Slot 45 | Slot 49 |
 | [[10-CAIXAS-MODULE\|tw-caixas]] | `plugins/tw-caixas/menus/caixas.yml` | 54 Slots | `&8➔ &#7FB4F4&lCHAVES & CAIXAS VIRTUAIS` | Slot 45 | Slot 49 |
-| [[05-MINAS-MODULE\|tw-minas]] | `plugins/tw-minas/menus/minas_extra.yml` | 54 Slots | `&8➔ &#7FB4F4&lOFICINA & MISSÕES` | Slot 45 | Slot 49 |
+| [[05-MINAS-MODULE\|tw-minas]] | `MinaMainMenu.java` (Central) | 54 Slots | `&8➔ &#7FB4F4&lCENTRAL DE MINAS` | Slot 45 | Slot 49 |
+| [[05-MINAS-MODULE\|tw-minas]] | `CatalogoMenu.java` (Catálogo) | 54 Slots | `&8➔ &#7FB4F4&lCATÁLOGO DE MINAS` | Slot 45 | Slot 49 |
+| [[05-MINAS-MODULE\|tw-minas]] | `OficinaMenu.java` (Oficina) | 54 Slots | `&8➔ &#7FB4F4&lOFICINA DE MINAS` | Slot 45 | Slot 49 |
+| [[05-MINAS-MODULE\|tw-minas]] | `CartinhasMenu.java` (Missões) | 27 Slots | `&8➔ &#7FB4F4&lMISSÕES DE MINERAÇÃO` | Slot 18 | Slot 22 |
+| [[05-MINAS-MODULE\|tw-minas]] | `RankingMenu.java` (Ranking) | 27 Slots | `&8➔ &#7FB4F4&lRANKING DE MINERADORES` | Slot 18 | Slot 22 |
 
 ---
 
@@ -62,9 +66,10 @@ ultima_atualizacao: "2026-11-05"
 - **Tamanho:** 54 Slots.
 - **Estrutura:** Catálogo de caixas de recompensa com exibição do sistema de *Pity* dinâmico, saldo de chaves virtuais e forja de fragmentos.
 
-### 7. `tw-minas` (`minas_extra.yml`)
-- **Tamanho:** 54 Slots.
-- **Estrutura:** Oficina de picaretas, missões de quebra de blocos, cartinhas de bônus e detecção de meteoritos em minas.
+### 7. `tw-minas` (Nativo Java em `br.com.tw.minas.menus.*`)
+- Consulte a documentação dedicada detalhada em [[gui_minas|GUI Central de Minas]].
+- Possui arquitetura em cascata: `Central de Minas (54s)` ➔ `Catálogo (54s)`, `Oficina (54s)`, `Missões (27s)`, `Ranking (27s)`.
+- Todos os submenus possuem botão de retorno para a `Central de Minas` e atalho para o `/menu`.
 
 ---
 ⬅️ [[gui_minas|Nota Anterior: GUI Minas]] | 🔼 [[MOC_Interacoes|Voltar a Interações]] | ➡️ [[MOC_Interacoes|Voltar ao MOC]]
