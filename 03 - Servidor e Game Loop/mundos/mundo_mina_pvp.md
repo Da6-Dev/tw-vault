@@ -7,7 +7,7 @@ tags:
   - tw/combate
 mundo_nome: "mina_pvp_winter"
 status: ativo
-versao: "2.0.0"
+versao: "2.1.0"
 ultima_atualizacao: "2026-11-06"
 ---
 
@@ -16,7 +16,7 @@ ultima_atualizacao: "2026-11-06"
 # ⚔️ Mundo Mina PvP e Arena Hostil (`mina_pvp_winter`)
 
 > [!danger] Zona de Alto Risco, Tema Winter e Combate Real
-> A Mina PvP é a arena de combate e extração do servidor, ambientada no mapa temático de inverno (`mina_pvp_winter`). Itens dropam no chão ao morrer e desconectar em combate resulta em morte instantânea! O mundo legado (`mina_pvp`) foi descarregado e arquivado em backup.
+> A Mina PvP é a arena de combate e extração do servidor, ambientada no mapa temático original de inverno (`mina_pvp_winter`). O mapa é base e puro (sem blocos ou estruturas artificiais inseridas). As demarcações de regiões de proteção e spawn são definidas pelo administrador via WorldGuard in-game.
 
 ---
 
@@ -28,28 +28,13 @@ ultima_atualizacao: "2026-11-06"
 - **PVP:** `true` (Habilitado)
 - **Fome (Hunger):** `true` (Habilitada)
 - **Voo (Allow Flight):** `false` (Proibido voar sob qualquer circunstância)
-- **Clima (Weather):** `false` (Sem chuva ou tempestades prejudiciais)
-- **Spawn Seguro:** X: `-64.0`, Y: `110.0`, Z: `16.0` (Piso Y: `109`)
+- **Clima (Weather):** `false` (Sem chuva ou tempestades)
 - **Inventário:** Isolado no grupo `mina_pvp` em `plugins/Multiverse-Inventories/groups.yml` (jogadores não entram com itens da Survival/Terrenos).
 
 ---
 
 ## 🛡️ Regiões WorldGuard (`mina_pvp_winter/regions.yml`)
-
-### 1. Zona Segura do Spawn (`spawn`) — Prioridade 10
-- **Área Cuboid:** X: `-76` a `-52`, Y: `95` a `130`, Z: `4` a `28`.
-- `pvp`: `deny` (Impossível sofrer dano de jogadores no spawn).
-- `invincible`: `allow` (Imortalidade na plataforma de entrada).
-- `allow-combat-entry`: `deny` *(Jogadores marcados em combate pelo CombatLog são bloqueados de correr para dentro do spawn).*
-- `block-break` & `block-place`: `deny`.
-
-### 2. Arena Global Externa (`__global__`) — Prioridade 0
-- `pvp`: `allow`
-- `invincible`: `deny` (Dano totalmente ativo).
-- `fall-damage`: `allow` (Dano de queda ativo).
-- `block-break` & `block-place`: `deny` (Proteção estrutural total contra quebra e construção).
-- `tnt` & `fire-spread`: `deny`.
-- `mob-spawning`: `deny`.
+O arquivo de regiões está limpo (`regions: {}`) para que as áreas (como Spawn, Barreira e Arena) sejam demarcadas diretamente no mapa com a varinha do WorldEdit/WorldGuard (`//wand` e `/rg define`).
 
 ---
 
@@ -63,11 +48,14 @@ ultima_atualizacao: "2026-11-06"
 
 ---
 
-## 🎒 Kits de Batalha (`tw-minas`)
-- **Comandos:** `/minapvp` (Entrar na arena), `/pvpsair` (Sair da arena), `/kits` (Kits PvP).
-- **Kit Básico:** Armadura e Espada de Ferro, Escudo, Arco, 24 Flechas, 24 Bifes, 2 Maçãs Douradas.
-- **Kit VIP:** Espada de Diamante Sharp 1, Armadura de Ferro Prot 1, 4 Maçãs Douradas.
-- **Kit Prestígio:** Espada de Diamante Sharp 2, Armadura de Diamante Prot 1, 6 Maçãs Douradas.
+## 🎒 Permissões e Kits de Batalha (`tw-minas`)
+- **Comandos Liberados na Whitelist:** `/minapvp`, `/pvp`, `/pvpsair`, `/kits`.
+- **Permissões Nativas de Acesso:**
+  - `tw-minas.pvp.enter`: `true` (liberado para todos os jogadores).
+  - `tw-minas.pvp.leave`: `true` (liberado para todos os jogadores).
+  - `tw-minas.kits`: `true` (acesso ao menu de kits).
+  - `tw-minas.kits.vip`: para jogadores VIP.
+  - `tw-minas.kits.prestige`: para jogadores Prestígio.
 
 ---
 ⬅️ [[mundo_terrenos|Nota Anterior: mundo_terrenos]] | 🔼 [[MOC_Mundos|Voltar a Mundos]] | ➡️ [[MOC_Comandos|Ir para Comandos]]
