@@ -102,6 +102,7 @@ graph TD
 * [[2026-11-05 - Setup Neon e Deploy no Render]]
 * [[2026-11-05 - Criacao do Super Vault Unificado]]
 * [[2026-11-05 - Sincronizacao Frontend com Game Loop e Ranks]]
+* [[2026-11-05 - Remocao de Contas Demo e Hardening de Producao]]
 
 ---
 
