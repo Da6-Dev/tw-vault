@@ -43,3 +43,12 @@ Voltar para o [[00 - MOC (Map of Content)]].
 - [[Seguranca e Hardening|Diretrizes de Segurança e Hardening]]
 - [[Tabela Usuarios|Estrutura da Tabela Usuarios]]
 - [[Neon PostgreSQL|Banco Neon Serverless]]
+
+
+### 3. Resolução do Popup do Google (COOP & Referrer-Policy)
+* **Diagnóstico da Tela Branca no Popup:** O middleware Helmet utilizava por padrão `cross-origin-opener-policy: same-origin`, o que cortava o `window.opener` e impedia que o popup do Google devolvesse o token via `postMessage`.
+* **Correção Aplicada:**
+  * Configurado `crossOriginOpenerPolicy: { policy: 'same-origin-allow-popups' }`.
+  * Configurado `referrerPolicy: { policy: 'strict-origin-when-cross-origin' }`.
+  * Liberado `https://*.googleapis.com` e `https://*.google.com` no CSP.
+* **Deploy ao vivo:** Deploy ID `dep-dbmhsd17lnhs73953t5g` com status **LIVE**.
