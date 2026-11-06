@@ -89,6 +89,7 @@ graph TD
 ### 🎮 3. [[MOC_Geral|Servidor, Economia & Game Loop]]
 *Configurações in-game, balanceamento econômico, menus e comandos do servidor.*
 * **Centrais MOC:** [[MOC_Sistemas]] • [[MOC_Economia]] • [[MOC_Mundos]] • [[MOC_Comandos]] • [[MOC_Interacoes]]
+* **Interfaces & UI/UX:** [[gui_design_system|Design System de Menus]] • [[gui_arquitetura_navegacao|Arquitetura de Navegação]] • [[gui_menu_principal|Hub Menu Principal]] • [[gui_minas|Central de Minas]] • [[gui_tw_plugins|Menus dos Plugins TW]]
 * **Economia & Mercado:** [[tabela_precos|Tabela de Preços]] • [[fluxo_monetario|Fluxo Monetário]] • [[boosters_multiplicadores|Boosters]]
 * **Game Loop & Gameplay:** [[jornada_jogador|Jornada do Jogador]] • [[combate_pvp|Combate PvP]]
 * **Mundos:** [[mundo_lobby|Lobby Spawn]] • [[mundo_minas|Mundo Minas]] • [[mundo_terrenos|Terrenos PlotSquared]] • [[mundo_mina_pvp|Arena PvP]]
@@ -104,6 +105,7 @@ graph TD
 * [[2026-11-05 - Sincronizacao Frontend com Game Loop e Ranks]]
 * [[2026-11-05 - Remocao de Contas Demo e Hardening de Producao]]
 * [[2026-11-05 - Protocolo Estrito de Memoria e Vault-First]]
+* [[2026-11-05 - Padronizacao e Redesign de Menus UI-UX]]
 
 ---
 
