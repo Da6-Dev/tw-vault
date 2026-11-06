@@ -106,6 +106,7 @@ graph TD
 * [[2026-11-05 - Protocolo Estrito de Memoria e Vault-First]]
 * [[2026-11-05 - Auditoria e Refatoracao de Design Area de Contas]]
 * [[2026-11-06 - Redesign Mobile-First Painel de Perfil]]
+* [[2026-11-06 - Correcao e Exibicao do Menu de Opcoes Perfil]]
 
 ---
 
